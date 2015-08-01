@@ -1,3 +1,5 @@
+
+
 //////////////////////////////////////////////////////////
 /*
 Led strip equalizer project
@@ -6,18 +8,8 @@ descrip. : Takes the audio signal from some source, converts the
 signal to the fft equivalent and then outputs that to and LED strip
 to create an equalizer. 
 */
-//fft handling 
-//////////////////////////////////////////////////////////////
-//create the fix_fft object
-#ifdef FIXFFT_H
-#define FIXFFT_H
-
-int fix_fft(char fr[], char fi[], int m, int inverse);
-int fix_fftr(char f[], intm m, int inverse);
-
-#endif 
-
 ///////////////////////////////////////////////////////////////
+#include "fix_fft.h"
 #include "Arduino.h"
 #include <avr/pgmspace.h>
 #include <Adafruit_NeoPixel.h>
@@ -42,6 +34,13 @@ void setup()
  
 
 void loop(){
+  /*
+  this should give an fft with 
+- sampling rate:           1ms
+- frequency resolution:  500Hz
+- lowest frequency:       7.8Hz
+ */
+ 
  int static i = 0;
  static long tt;//place holder time for fft sampling
  int val;//integer value read from audio 
