@@ -1,6 +1,6 @@
 
 #include "fix_fft.h"
-#include <WProgram.h>
+#include  "Arduino.h"
 #include <avr/pgmspace.h>
 
 /* fix_fft.c - Fixed-point in-place Fast Fourier Transform  */
@@ -126,7 +126,7 @@ inline char FIX_MPY(char a, char b)
  RESULT (in-place FFT), with 0 <= n < 2**m; set inverse to
  0 for forward transform (FFT), or 1 for iFFT.
 */
-int fix_fft(char fr[], char fi[], int m, int inverse, const prog_int8_t Sinewave[])
+int fix_fft(char fr[], char fi[], int m, int inverse)
 {
    int mr, nn, i, j, l, k, istep, n, scale, shift;
    char qr, qi, tr, ti, wr, wi;
