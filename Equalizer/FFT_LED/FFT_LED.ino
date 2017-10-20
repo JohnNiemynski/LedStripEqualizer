@@ -131,7 +131,7 @@ void loop() {
         }
         else if ((fht_log_out[b] >= 80) && (fht_log_out[b] < 120))
         {
-
+          strip.setPixelColor(b+7, fht_log_out[b],fht_log_out[b],fht_log_out[b]);
         }
         else if (fht_log_out[b] >= 120)
         {
